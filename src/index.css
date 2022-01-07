@@ -38,7 +38,7 @@ code {
   margin: 40px;
   padding: 20px;
   box-shadow: 0 3px 10px rgb(0,0,0.2);
-  max-width: 40%;
+  width: 40%;
   border-radius: 27px;
 }
 
@@ -47,11 +47,13 @@ code {
 }
 
 .news-feed p{
-  margin:1px
+  margin:1px;
+  margin-top: 5px;
 }
 
 .news-feed div{
-  margin:12px;
+  margin: 19px;
+  margin-top: 20px;
 }
 
 .news-feed a{
@@ -63,8 +65,29 @@ code {
   text-decoration:underline;
 }
 
+.skeleton{
+  animation: skeleton-animation 1s linear infinite alternate;
+  border-radius: 25px;
+}
+
+.skeleton-text{
+  width: 100%;
+  height: 15px;
+}
+
+@keyframes skeleton-animation{
+  0%{
+    background-color: rgb(8, 54, 73);
+  }
+
+  100%{
+    background-color: hsl(200,20,95%);
+  }
+}
+
 p#source {
   font-size: small;
+  width: 40%;
 }
 
 
