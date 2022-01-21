@@ -16,9 +16,9 @@ app.listen(PORT,()=>{
 app.get('/news',(req,res)=>{
     var options = {
         method: 'GET',
-        url: 'https://crypto-news-live.p.rapidapi.com/news',
+        url: 'https://crypto-news-live3.p.rapidapi.com/news',
         headers: {
-          'x-rapidapi-host': 'crypto-news-live.p.rapidapi.com',
+          'x-rapidapi-host': 'crypto-news-live3.p.rapidapi.com',
           'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY
         }
       };
