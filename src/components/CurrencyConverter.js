@@ -1,6 +1,15 @@
 import { useState } from "react";
 import ExchangeRate from "./ExchangeRate";
 import axios from "axios";
+import TextField from '@mui/material/TextField';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
 
 function CurrencyConverter() {
 
@@ -49,10 +58,10 @@ function CurrencyConverter() {
         <div className="currency-converter">
             <h2>Currency Converter</h2>
             <div className="input-box">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td id="sideColumn">
+                
+                        <div className="row">
+                        
+                            {/* <td id="sideColumn">
                                 Primary Amount
                             </td>
                             <td>
@@ -74,10 +83,46 @@ function CurrencyConverter() {
                                 {currencies.map((currency,_index) =>(<option key={_index}>{currency}</option>))}
 
                                 </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="sideColumn">
+                            </td> */}
+
+                            
+                            
+                            <TextField
+                                required
+                                id="outlined-required"
+                                label="Primary Currency Value"
+                                type="number"
+                                    value={amount}
+                                    name="currency-amount-1"
+                                    onChange={(e)=>{setAmount(e.target.value)}}
+                                />
+                            <Box>
+                                <FormControl>
+                            <InputLabel id="demo-simple-select-label">CUR</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={chosenPrimaryCurrency}
+                                label="CUR"
+                                onChange={(e) => setChosenPrimaryCurrency(e.target.value)}
+                                >
+                                {/* <select
+                                    value={chosenPrimaryCurrency}
+                                    name="currency-option-1"
+                                    className="currency-options"
+                                    onChange={(e) => setChosenPrimaryCurrency(e.target.value)}
+                                > */}
+
+                                {currencies.map((currency,_index) =>(<MenuItem key={_index} value={currency}>{currency}</MenuItem>))}
+                                </Select>
+                                </FormControl>
+                            </Box>
+
+                                {/* </select> */}
+                           
+                        </div>
+                        <div className="row">
+                            {/* <td id="sideColumn">
                                 Secondary Amount
                             </td>
                             <td>
@@ -100,12 +145,57 @@ function CurrencyConverter() {
                                 {currencies.map((currency,_index) =>(<option key={_index}>{currency}</option>))}
 
                                 </select>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-                <button id="convert-button" onClick={convert}>Convert</button>
+                            </td> */}
+                            
+                            <TextField
+                            className="currencyInputValue"
+                                id="outlined-read-only-input"
+                                label="Converted Currency Value"
+                                value={result}
+                                InputProps={{
+                                    readOnly: true,
+                                }}
+                            />
+                           
+                                {/* <select
+                                    value={chosenSecondaryCurrency}
+                                    name="currency-option-2"
+                                    className="currency-options"
+                                    onChange={(e) => setChosenSecondaryCurrency(e.target.value)}
+                                >
+
+                                {currencies.map((currency,_index) =>(<option key={_index}>{currency}</option>))}
+
+                                </select> */}
+                                <Box>
+                                <FormControl>
+                            <InputLabel id="demo-simple-select-label">CUR</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={chosenSecondaryCurrency}
+                                label="CUR"
+                                onChange={(e) => setChosenSecondaryCurrency(e.target.value)}
+                                >
+                                {/* <select
+                                    value={chosenPrimaryCurrency}
+                                    name="currency-option-1"
+                                    className="currency-options"
+                                    onChange={(e) => setChosenPrimaryCurrency(e.target.value)}
+                                > */}
+
+                                {currencies.map((currency,_index) =>(<MenuItem key={_index} value={currency}>{currency}</MenuItem>))}
+                                </Select>
+                                </FormControl>
+                            </Box>
+                         
+                        </div>
+                   
+                <Tooltip title="Convert">
+                    <IconButton onClick={convert}>
+                <CurrencyExchangeIcon className="currencyExchangeButton" />
+                </IconButton>
+                </Tooltip>
             </div>
             <ExchangeRate 
                 exchangeRateVals={exchangeRateVals}

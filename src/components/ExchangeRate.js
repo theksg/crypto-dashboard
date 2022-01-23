@@ -5,7 +5,7 @@ function ExchangeRate({exchangeRateVals}) {
   const chosenSecondaryCurrency=exchangeRateVals.obtainedSecondaryExchangeRate
     return (
       <div className="exchange-rate">
-        <h3>Exhchange Rate</h3>
+        <h3>Exchange Rate</h3>
         <h1>{exchangeRate}</h1>
         <h3>{chosenPrimaryCurrency} to {chosenSecondaryCurrency}</h3>
       </div>

@@ -103,20 +103,8 @@ p#source {
   border-radius: 27px;
 }
 
-.currency-converter button{
-  padding: 7px 17px;
-  margin: 15px;
-  border: 2px solid;
-  border-radius: 14px;
-  background: white;
-  transition-duration: 1000ms;
-}
 
-.currency-converter button:hover{
-  transition-duration: 1000ms;
-  background-color: rgb(252, 72, 72);
-  color:white
-}
+
 
 .currency-converter #sideColumn{
   text-align:right
@@ -124,7 +112,6 @@ p#source {
 
 .currency-converter input{
   text-align: center;
-  margin: 2px 2px;
   border: none;
   border-radius: 7px;
 }
@@ -154,3 +141,22 @@ p#source {
 .exchange-rate h1,h3{
   margin: 15px;
 }
+
+
+tr{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.row{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.currency-options{
+  margin:10px;
+}
+
