@@ -33,7 +33,7 @@ function NewsFeed() {
 
   if (articles?.length > 0) {
     for (let i = 0; i < range; i++) {
-      let ind = Math.floor((Math.random() * 100));
+      let ind = Math.floor((Math.random() *articles.length));
       articles_to_display.push(articles[ind])
     }
   }
@@ -44,7 +44,7 @@ function NewsFeed() {
         <h2>News Feed</h2>
         
           {articles_to_display?.map((article, _index) => (<div key={_index}>
-            <a href={article.url}>
+            <a href={article.url} target={"_blank"}>
               <p>{article.title}</p>
             </a>
             <p id="source">via {article.source}</p>
