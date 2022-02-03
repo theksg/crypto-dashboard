@@ -11,7 +11,7 @@ function NewsFeed() {
   useEffect(() => {
     var options = {
       method: 'GET',
-      url: 'http://localhost:8000/news',
+      url: '/news',
     };
 
     axios.request(options).then(function (response) {
