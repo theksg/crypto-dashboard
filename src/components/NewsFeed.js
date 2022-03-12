@@ -70,12 +70,6 @@ function NewsFeed() {
       
     </div>
   );
-  //  return (
-  //   <div className="news-feed">
-  //     <h2>Latest about Crypto</h2>
-  //     <ul><div><a href="https://coindesk.com/learn/"><p>Crypto Explainer+</p></a><p>via coindesk</p></div><div><a href="https://coindesk.com/learn/"><p>Crypto Explainer+</p></a><p>via coindesk</p></div><div><a href="https://coindesk.com/data/"><p>Crypto Prices </p></a><p>via coindesk</p></div><div><a href="https://coindesk.com/tech/2021/12/24/dfinitys-internet-computer-opens-ethereum-bridge/"><p>Dfinity’s Internet Computer Opens Ethereum Bridge</p></a><p>via coindesk</p></div><div><a href="https://coindesk.com/sponsored-content/crypto-aml-compliance-how-risk-scoring-can-help-meet-regulatory-requirements/"><p>Crypto AML Compliance: How Risk Scoring Can Help Meet Regulatory Requirements</p></a><p>via coindesk</p></div><div><a href="https://coindesk.com/markets/2021/12/24/cardano-polkadot-advance-as-crypto-market-rallies-ahead-of-christmas/"><p>Cardano, Polkadot Advance as Crypto Market Rallies Ahead of Christmas</p></a><p>via coindesk</p></div><div><a href="https://coindesk.com/policy/2021/12/23/lummis-to-propose-new-crypto-regulator-clear-guidance-in-2022-bill/"><p>Wyoming Sen. Lummis to Propose New Crypto Regulator, Clear Guidance in 2022 Bill</p></a><p>via coindesk</p></div></ul>
-  //   </div>
-  // );
 }
 
 export default NewsFeed;

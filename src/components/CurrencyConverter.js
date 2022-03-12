@@ -17,7 +17,6 @@ function CurrencyConverter() {
     const [chosenPrimaryCurrency,setChosenPrimaryCurrency] = useState('BTC')
     const [chosenSecondaryCurrency,setChosenSecondaryCurrency] = useState('BTC')
     const [amount,setAmount] = useState(0)
-    const [exchangeRate,setExchangeRate] = useState(0)
     const [result,setResult] = useState(0)
 
 
@@ -60,31 +59,7 @@ function CurrencyConverter() {
             <div className="input-box">
                 
                         <div className="row">
-                        
-                            {/* <td id="sideColumn">
-                                Primary Amount
-                            </td>
-                            <td>
-                                <input
-                                    type="number"
-                                    value={amount}
-                                    name="currency-amount-1"
-                                    onChange={(e)=>{setAmount(e.target.value)}}
-                                />
-                            </td>
-                            <td>
-                                <select
-                                    value={chosenPrimaryCurrency}
-                                    name="currency-option-1"
-                                    className="currency-options"
-                                    onChange={(e) => setChosenPrimaryCurrency(e.target.value)}
-                                >
-
-                                {currencies.map((currency,_index) =>(<option key={_index}>{currency}</option>))}
-
-                                </select>
-                            </td> */}
-
+            
                             
                             
                             <TextField
@@ -106,46 +81,15 @@ function CurrencyConverter() {
                                 label="CUR"
                                 onChange={(e) => setChosenPrimaryCurrency(e.target.value)}
                                 >
-                                {/* <select
-                                    value={chosenPrimaryCurrency}
-                                    name="currency-option-1"
-                                    className="currency-options"
-                                    onChange={(e) => setChosenPrimaryCurrency(e.target.value)}
-                                > */}
 
                                 {currencies.map((currency,_index) =>(<MenuItem key={_index} value={currency}>{currency}</MenuItem>))}
                                 </Select>
                                 </FormControl>
                             </Box>
 
-                                {/* </select> */}
                            
                         </div>
                         <div className="row">
-                            {/* <td id="sideColumn">
-                                Secondary Amount
-                            </td>
-                            <td>
-                                <input
-                                    type="number"
-                                    value={result}
-                                    name="currency-amount-2"
-                                    disabled={true}
-                                    id="disabledInput"
-                                />
-                            </td>
-                            <td>
-                                <select
-                                    value={chosenSecondaryCurrency}
-                                    name="currency-option-2"
-                                    className="currency-options"
-                                    onChange={(e) => setChosenSecondaryCurrency(e.target.value)}
-                                >
-
-                                {currencies.map((currency,_index) =>(<option key={_index}>{currency}</option>))}
-
-                                </select>
-                            </td> */}
                             
                             <TextField
                             className="currencyInputValue"
@@ -156,17 +100,6 @@ function CurrencyConverter() {
                                     readOnly: true,
                                 }}
                             />
-                           
-                                {/* <select
-                                    value={chosenSecondaryCurrency}
-                                    name="currency-option-2"
-                                    className="currency-options"
-                                    onChange={(e) => setChosenSecondaryCurrency(e.target.value)}
-                                >
-
-                                {currencies.map((currency,_index) =>(<option key={_index}>{currency}</option>))}
-
-                                </select> */}
                                 <Box>
                                 <FormControl>
                             <InputLabel id="demo-simple-select-label">CUR</InputLabel>
@@ -177,12 +110,6 @@ function CurrencyConverter() {
                                 label="CUR"
                                 onChange={(e) => setChosenSecondaryCurrency(e.target.value)}
                                 >
-                                {/* <select
-                                    value={chosenPrimaryCurrency}
-                                    name="currency-option-1"
-                                    className="currency-options"
-                                    onChange={(e) => setChosenPrimaryCurrency(e.target.value)}
-                                > */}
 
                                 {currencies.map((currency,_index) =>(<MenuItem key={_index} value={currency}>{currency}</MenuItem>))}
                                 </Select>
