@@ -37,7 +37,6 @@ function CurrencyConverter() {
 
         axios.request(options).then(function (response) {
             console.log(response.data)
-            setExchangeRate(response.data);
             setExchangeRateVals({
                 obtainedExchangeRate:response.data,
                 obtainedPrimaryExchangeRate:chosenPrimaryCurrency,
