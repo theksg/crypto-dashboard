@@ -14,11 +14,21 @@ function NewsFeed() {
       url: '/news',
     };
 
+    var fetched=false;
+
+    setTimeout(()=>{
+      if(!fetched)
+        alert("It is taking more than expected time in fetching data from API");
+    },10000);
+
     axios.request(options).then(function (response) {
+      fetched=true;
       console.log(response.data);
       setArticles(response.data);
     }).catch(function (error) {
+      fetched=true;
       console.error(error);
+      alert("Problem Occured in Fetching Data from API.Please retry in some while")
     });
   }, [])
 

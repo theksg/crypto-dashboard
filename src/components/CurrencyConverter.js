@@ -35,7 +35,15 @@ function CurrencyConverter() {
         params: {from_currency: chosenPrimaryCurrency, function: 'CURRENCY_EXCHANGE_RATE', to_currency: chosenSecondaryCurrency},
         };
 
+        var fetched=false;
+
+        setTimeout(()=>{
+            if(!fetched)
+            alert("It is taking more than expected time in fetching data from API");
+        },10000);
+
         axios.request(options).then(function (response) {
+            fetched=true;
             console.log(response.data)
             setExchangeRateVals({
                 obtainedExchangeRate:response.data,
@@ -44,7 +52,9 @@ function CurrencyConverter() {
                 })
             setResult(response.data*amount)
         }).catch(function (error) {
+            fetched=true;
             console.error(error);
+            alert("Problem Occured in Fetching Data from API.Please retry in some while")
         });
     }
 
