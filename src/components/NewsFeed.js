@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import RefreshIcon from '@mui/icons-material/Refresh';
+import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
 
 
 
@@ -51,8 +54,20 @@ function NewsFeed() {
   if (articles_to_display.length !== 0) {
     return (
       <div className="news-feed">
-        <h2>News Feed</h2>
-        
+        <h2 className="headingContent">
+          <span>
+            News Feed
+          </span>
+          <Tooltip title="Refresh">
+          <IconButton
+            style={{
+              color: "black"
+          }}
+          >
+          <RefreshIcon/>
+          </IconButton>
+          </Tooltip>
+        </h2>
           {articles_to_display?.map((article, _index) => (<div key={_index}>
             <a href={article.url} target={"_blank"}>
               <p>{article.title}</p>

@@ -128,7 +128,11 @@ function CurrencyConverter() {
                         </div>
                    
                 <Tooltip title="Convert">
-                    <IconButton onClick={convert}>
+                    <IconButton 
+                    style={{
+                        color: "black"
+                    }}
+                    onClick={convert}>
                 <CurrencyExchangeIcon className="currencyExchangeButton" />
                 </IconButton>
                 </Tooltip>

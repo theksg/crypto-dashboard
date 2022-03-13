@@ -57,6 +57,12 @@ code {
   margin-top: 20px;
 }
 
+.news-feed .headingContent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .news-feed a{
   text-decoration: none;
   color:#0a55ff;
