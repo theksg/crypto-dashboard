@@ -13,7 +13,7 @@ import FormControl from '@mui/material/FormControl';
 
 function CurrencyConverter() {
 
-    const currencies=['BTC','ETH','USD','XRP','LTC','ADA']
+    const currencies=['BTC','ETH','USD','XRP','LTC','ADA','INR','PKR']
     const [chosenPrimaryCurrency,setChosenPrimaryCurrency] = useState('BTC')
     const [chosenSecondaryCurrency,setChosenSecondaryCurrency] = useState('BTC')
     const [amount,setAmount] = useState(0)
