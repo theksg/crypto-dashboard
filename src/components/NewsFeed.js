@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 function NewsFeed() {
 
   const [articles, setArticles] = useState(null)
+  const [refresh, setRefresh] = useState(false)
 
   useEffect(() => {
     var options = {
@@ -33,11 +34,17 @@ function NewsFeed() {
       console.error(error);
       alert("Problem Occured in Fetching Data from API.Please retry in some while")
     });
-  }, [])
+  }, [refresh])
 
 
   const range = 7
-  const articles_to_display = []
+  let articles_to_display = []
+
+  const refresh_clicked=()=>{
+    articles_to_display=[]
+    setArticles(null)
+    setRefresh(prev=>!prev)
+  }
 
   const dummy_article=[]
 
@@ -60,6 +67,7 @@ function NewsFeed() {
           </span>
           <Tooltip title="Refresh">
           <IconButton
+          onClick={refresh_clicked}
             style={{
               color: "black"
           }}
