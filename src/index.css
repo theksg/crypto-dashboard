@@ -29,7 +29,6 @@ code {
 .app{
   display: flex;
   flex-direction: row;
-  align-items: center;
   margin:0 auto;
   justify-content: center;
 }
@@ -108,6 +107,7 @@ p#source {
   text-align: center;
   max-width: 60%;
   border-radius: 27px;
+  height: 100%;
 }
 
 
@@ -145,6 +145,11 @@ p#source {
   width: 66%;
 }
 
+.exchange-rate h1{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .exchange-rate h1,h3{
   margin: 15px;
 }
@@ -172,6 +177,7 @@ tr{
 @media only screen and (max-width: 1000px) {
   .app{
     flex-direction: column;
+    align-items: center;
   }
 
   .news-feed,.currency-converter{

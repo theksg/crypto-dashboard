@@ -1,3 +1,4 @@
+import Tooltip from '@mui/material/Tooltip';
 
 function ExchangeRate({exchangeRateVals}) {
   const exchangeRate=exchangeRateVals.obtainedExchangeRate
@@ -6,7 +7,9 @@ function ExchangeRate({exchangeRateVals}) {
     return (
       <div className="exchange-rate">
         <h3>Exchange Rate</h3>
+        <Tooltip title={exchangeRate}>
         <h1>{exchangeRate}</h1>
+        </Tooltip>
         <h3>{chosenPrimaryCurrency} to {chosenSecondaryCurrency}</h3>
       </div>
     );

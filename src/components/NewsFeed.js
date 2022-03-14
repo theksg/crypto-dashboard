@@ -90,7 +90,21 @@ function NewsFeed() {
   else
   return (
     <div className="news-feed">
-      <h2>News Feed</h2>
+      <h2 className="headingContent">
+          <span>
+            News Feed
+          </span>
+          <Tooltip title="Refresh">
+          <IconButton
+          onClick={refresh_clicked}
+            style={{
+              color: "black"
+          }}
+          >
+          <RefreshIcon disabled/>
+          </IconButton>
+          </Tooltip>
+        </h2>
       
         {dummy_article?.map((article, _index) => (<div key={_index}>
           <a href={article.url}>
