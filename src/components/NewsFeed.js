@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 
 function NewsFeed() {
 
-  const [articles, setArticles] = useState(null)
+  const [articles, setArticles] = useState([])
   const [refresh, setRefresh] = useState(false)
 
   useEffect(() => {
@@ -37,12 +37,11 @@ function NewsFeed() {
   }, [refresh])
 
 
-  const range = 7
-  let articles_to_display = []
+  const range = 7;
+  console.log(process.env.REACT_APP_RANGE)
 
   const refresh_clicked=()=>{
-    articles_to_display=[]
-    setArticles(null)
+    setArticles([])
     setRefresh(prev=>!prev)
   }
 
@@ -51,14 +50,7 @@ function NewsFeed() {
   for(let i=0;i<range;i++)
     dummy_article.push({url:"",title:"",source:""})
 
-  if (articles?.length > 0) {
-    for (let i = 0; i < range; i++) {
-      let ind = Math.floor((Math.random() *articles.length));
-      articles_to_display.push(articles[ind])
-    }
-  }
-
-  if (articles_to_display.length !== 0) {
+  if (articles.length !== 0) {
     return (
       <div className="news-feed">
         <h2 className="headingContent">
@@ -76,7 +68,7 @@ function NewsFeed() {
           </IconButton>
           </Tooltip>
         </h2>
-          {articles_to_display?.map((article, _index) => (<div key={_index}>
+          {articles?.map((article, _index) => (<div key={_index}>
             <a href={article.url} target={"_blank"}>
               <p>{article.title}</p>
             </a>

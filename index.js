@@ -33,7 +33,16 @@ app.get('/news',(req,res)=>{
       };
   
       axios.request(options).then(function (response) {
-        res.json(response.data)
+        const articles = response.data;
+        const articles_to_display = [];
+        const range = process.env.REACT_APP_RANGE;
+        if (articles?.length > 0) {
+          for (let i = 0; i < Math.min(range,articles.length); i++) {
+            let ind = Math.floor((Math.random() *articles.length));
+            articles_to_display.push(articles[ind])
+          }
+        }
+        res.json(articles_to_display)
       }).catch(function (error) {
         console.error(error);
       });
@@ -52,7 +61,7 @@ app.get('/convert',(req,res)=>{
         };
 
         axios.request(options).then(function (response) {
-            res.json(parseFloat(response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]).toFixed(4));
+            res.json(Math.round(response.data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]*100)/100);
         }).catch(function (error) {
             console.error(error);
         });
